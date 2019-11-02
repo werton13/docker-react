@@ -1,5 +1,8 @@
 FROM node:alpine
 
+RUN apk add --update ruby
+RUN gem install bundler  --no-ri --no-rdoc
+
 WORKDIR '/app'
 
 COPY package.json .

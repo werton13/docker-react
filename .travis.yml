@@ -5,6 +5,7 @@ before_install:
    - sudo gem install bundler
    - docker build -t werton13/docker-react -f Dockerfile.dev .
 script:
-   - docker run werton13/docker-react npm run test -- --coverage
+#   - docker run werton13/docker-react npm run test -- --coverage
+    - docker run -e CI=true werton13/docker-react npm run test
 
    

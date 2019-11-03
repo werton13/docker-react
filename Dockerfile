@@ -7,6 +7,7 @@ RUN  ["npm", "run", "build"]
 
 # /app/build <-- all the stuff un container
 
-FROM nginx 
+FROM nginx
+EXPOSE 80 
 COPY --from=builder /app/build /usr/share/nginx/html
 #nginx will start automatically 
